@@ -6,14 +6,18 @@ from django.shortcuts import render, redirect
 
 def signup_view(request):
     if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        confirm_password = request.POST['confirm_password']
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        confirm_password = request.POST.get('confirm_password')
+        email = request.POST.get('email')  # Get email from POST data
+
         if password == confirm_password:
             if User.objects.filter(username=username).exists():
                 return render(request, 'signup.html', {'error': 'Username already exists'})
+            elif User.objects.filter(email=email).exists():
+                return render(request, 'signup.html', {'error': 'Email already in use'})
             else:
-                user = User.objects.create_user(username=username, password=password)
+                user = User.objects.create_user(username=username, password=password, email=email)
                 user.save()
                 return redirect('login')
         else:
