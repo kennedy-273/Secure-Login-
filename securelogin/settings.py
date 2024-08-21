@@ -44,11 +44,16 @@ INSTALLED_APPS = [
 
 # SSL Configuration for Development
 
-SECURE_SSL_REDIRECT = False
+# myproject/settings.py
+# Ensure that the session cookie is secure
 SESSION_COOKIE_SECURE = True
+# Ensure that the session cookie is only sent over HTTPS
 CSRF_COOKIE_SECURE = True
-SECURE_BROWSER_XSS_FILTER = True
-SECURE_CONTENT_TYPE_NOSNIFF = True
+# Prevent JavaScript from accessing the session cookie
+SESSION_COOKIE_HTTPONLY = True
+# Configure session expiration
+SESSION_COOKIE_AGE = 3600  # 1 hour
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -127,6 +132,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
