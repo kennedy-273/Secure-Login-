@@ -28,16 +28,20 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            text-align: center;
+            text-align: left; 
+            margin: auto; 
+            max-width: 600px; 
         }
+
+        .signup-container p {
+                margin-top: 20px;
+                text-align: center; 
+            }
 
         h2 {
             margin-bottom: 20px;
             color: #333333;
             text-align: center;
-            
-            
-            
         }
 
         label {
@@ -49,19 +53,17 @@
         input[type="text"],
         input[type="email"],
         input[type="password"] {
-            width: 50%;
+            width: 100%;
             padding: 10px;
             margin-bottom: 20px;
             border: 1px solid #cccccc;
             border-radius: 25px;
             box-sizing: border-box;
             font-size: 16px;
-            
-            
         }
 
         button {
-            width: 50%;
+            width: 100%;
             padding: 12px;
             border: none;
             border-radius: 25px;
@@ -81,8 +83,9 @@
         }
 
         .login-btn {
-            color: #3A5B22;
+            color: #007bff;
             text-decoration: none;
+          
         }
 
         .login-btn:hover {
@@ -92,7 +95,6 @@
         .error-msg {
             color: red;
             margin-top: 10px;
-            text-align: center;
         }
 
         .image-container {
@@ -115,25 +117,24 @@
             <form method="POST">
                 {% csrf_token %}
                 <label for="username">Name:</label>
-                <input type="text" id="username" name="username" required>
+                <input type="text" id="username" name="username" placeholder="Enter your name" required>
 
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
 
                 <label for="confirm-password">Confirm Password:</label>
-                <input type="password" id="confirm-password" name="confirm-password" required>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
 
                 <button class="signup-btn" type="submit">Signup</button>
             </form>
             
-            <p>Already have an account? <a class="login-btn" href="{% url 'login' %}">Login here</a></p>
+            <p>Have an account? <a class="login-btn" href="{% url 'login' %}">Sign in</a></p>
         </div>    
 
         <div class="image-container">
-            <!-- The image is displayed on the right side, covering the full height and width of its container -->
         </div>
     </div>
 </body>
