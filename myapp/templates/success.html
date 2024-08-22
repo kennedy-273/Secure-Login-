@@ -8,63 +8,93 @@
   />
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Success</title>
     <style>
-        body  {
-            margin: 0;
-            padding: 0;
-            font-family: "Poppins", sans-serif;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .success-container{
-            text-align: center;
-        }
-        
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .success-container {
+        text-align: center;
+      }
+
+      .success-container img {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+      }
+
+      .success-container h2 {
+        font-size: 32px;
+        color: #000000;
+        font-weight: 500;
+        margin: 0;
+      }
+
+      .success-container h2 span {
+        color: #3a5b22;
+      }
+
+      button {
+        padding: 10px 30px;
+        background-color: #3a5b22;
+        color: #ffffff;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        margin-top: 20px;
+        font-size: 16px;
+      }
+
+      button a {
+        color: #ffffff;
+        text-decoration: none;
+      }
+
+      @media (max-width: 768px) {
         .success-container img {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            margin-bottom: 20px;
+          width: 200px;
+          height: 200px;
         }
 
         .success-container h2 {
-            font-size: 32px;
-            color: #000000;
-            font-weight: 500;
-            margin: 0;
-        }
-        .success-container h2 span {
-            color: #3a5b22;
+          font-size: 24px;
         }
 
-        button{
-            padding: 10px 30px;
-            background-color: #3a5b22;
-            color: #ffffff;
-            
-         
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            margin-top: 20px;
-            font-size: 16px;
+        button {
+          padding: 8px 20px;
+          font-size: 14px;
         }
-        button a {
-        color: #ffffff; 
-        text-decoration: none;
-    }
+      }
 
+      @media (max-width: 480px) {
+        .success-container img {
+          width: 150px;
+          height: 150px;
+        }
+
+        .success-container h2 {
+          font-size: 20px;
+        }
+
+        button {
+          padding: 6px 15px;
+          font-size: 12px;
+        }
+      }
     </style>
   </head>
   <body>
     <div class="success-container">
-      <img
-        src="../static/images/leaf.jpg"
-        alt="User Image"
-      />
+      <img src="../static/images/leaf.jpg" alt="User Image" />
       <h2>Welcome, <span>{{ user.username }}!</span></h2>
       <button><a href="{% url 'login' %}">Log Out</a></button>
     </div>
