@@ -6,40 +6,38 @@
     <title>Signup</title>
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f4f7f6;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            overflow: hidden; 
         }
 
         .container {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
             width: 100%;
-            padding: 50px;
-            box-sizing: border-box;
-            flex-wrap: wrap;
+            height: 100%;
         }
 
         .signup-container {
+            width: 50%;
+            height: 100%;
             padding: 50px;
-            width: 100%;
-            max-width: 400px;
             box-sizing: border-box;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
         }
 
         h2 {
             margin-bottom: 20px;
             color: #333333;
             text-align: center;
+            
+            
+            
         }
 
         label {
@@ -51,17 +49,19 @@
         input[type="text"],
         input[type="email"],
         input[type="password"] {
-            width: 100%;
+            width: 50%;
             padding: 10px;
             margin-bottom: 20px;
             border: 1px solid #cccccc;
             border-radius: 25px;
             box-sizing: border-box;
             font-size: 16px;
+            
+            
         }
 
         button {
-            width: 100%;
+            width: 50%;
             padding: 12px;
             border: none;
             border-radius: 25px;
@@ -72,16 +72,16 @@
         }
 
         .signup-btn {
-            background-color: #28a745;
+            background-color: #3A5B22;
             box-shadow: 0 5px 10px rgba(40, 167, 69, 0.3);
         }
 
         .signup-btn:hover {
-            background-color: #218838;
+            background-color: #3A5B22;
         }
 
         .login-btn {
-            color: #28a745;
+            color: #3A5B22;
             text-decoration: none;
         }
 
@@ -96,26 +96,12 @@
         }
 
         .image-container {
-            display: none; 
-            width: 100%;
-            max-width: 400px;
-            padding: 0 20px;
-            text-align: center;
-        }
-
-        .image-container img {
-            max-width: 100%;
-            border-radius: 8px;
-        }
-
-        @media (min-width: 768px) {
-            .signup-container {
-                width: 60%;
-            }
-
-            .image-container {
-                display: block; 
-            }
+            width: 50%;
+            height: 100%;
+            background-image: url('https://www.ugaoo.com/cdn/shop/files/13_024d83ee-4b4b-4d0d-b33c-891e3748640e.jpg?v=1710232846&width=1500');
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat;
         }
     </style>
 </head>
@@ -137,12 +123,18 @@
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required>
 
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+
                 <button class="signup-btn" type="submit">Signup</button>
             </form>
             
             <p>Already have an account? <a class="login-btn" href="{% url 'login' %}">Login here</a></p>
+        </div>    
+
+        <div class="image-container">
+            <!-- The image is displayed on the right side, covering the full height and width of its container -->
         </div>
-        
     </div>
 </body>
 </html>
