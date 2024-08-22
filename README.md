@@ -222,8 +222,28 @@ Mockups were created using [wireframe tool of choice] and can be found in the `m
 		    `python manage.py createsuperuser` 
     
 -   To run uWSGI:
-    
-    bash
+  
+-       bash
     
     
 		    `uwsgi --ini uwsgi.ini`
+
+
+Screenshots 
+![Screenshot from 2024-08-22 22-49-39](https://github.com/user-attachments/assets/30a67b5c-ebd9-41e4-9dbf-4484e6144d0a)
+
+
+
+![Screenshot from 2024-08-22 22-50-15](https://github.com/user-attachments/assets/59ea89f6-606f-4c71-8135-020527cea837)
+
+
+![Screenshot from 2024-08-22 22-51-18](https://github.com/user-attachments/assets/5b9caa71-5e0d-42e5-9708-b678b946bb18)
+
+
+
+
+
+
+
+
+    
